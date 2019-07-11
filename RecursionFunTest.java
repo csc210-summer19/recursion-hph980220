@@ -159,10 +159,13 @@ public class RecursionFunTest {
   public void testRemoveAll() {
     LinkedList<Integer> intList = new LinkedList<Integer>();
     intList.addLast(3);
+    intList.addLast(3);
+    intList.addLast(3);
     intList.addLast(5);
     intList.addLast(3);
     intList.addLast(3);
     intList.addLast(7);
+    intList.addLast(3);
     intList.addLast(3);
     intList.removeAll(3);
       
@@ -202,9 +205,13 @@ public class RecursionFunTest {
     list.addLast("B");
     list.addLast("B");
     list.addLast("X");
+    list.addLast("B");
     list.addLast("A");
-    assertEquals(5, list.size());
+    list.addLast("B");
+    assertEquals(7, list.size());
+    System.out.println(list.toString());
     list.duplicateAll("B");
+    System.out.println(list.toString());
     assertEquals("B", list.get(0));
     assertEquals("B", list.get(1));
     assertEquals("B", list.get(2));
@@ -212,8 +219,12 @@ public class RecursionFunTest {
     assertEquals("B", list.get(4));
     assertEquals("B", list.get(5));
     assertEquals("X", list.get(6));
-    assertEquals("A", list.get(7));
-    assertEquals(8, list.size());
+    assertEquals("B", list.get(7));
+    assertEquals("B", list.get(8));
+    assertEquals("A", list.get(9));
+    assertEquals("B", list.get(10));
+    assertEquals("B", list.get(11));
+    assertEquals(12, list.size());
   }
 
   @Test
@@ -251,7 +262,9 @@ public class RecursionFunTest {
     ObstacleCourse top = new ObstacleCourse(3, 1, grid);
     assertEquals(3, top.getStartRow());
     assertEquals(1, top.getStartColumn());
+    System.out.println(top.toString());
     top.findTheExit();
+    System.out.println(top.toString());
     assertEquals(0, top.getExitRow());
     assertEquals(2, top.getExitColumn());
   }
